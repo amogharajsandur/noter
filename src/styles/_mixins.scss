@@ -1,0 +1,7 @@
+@mixin rfcc($display: flex, $flex-dir: row, $jc: center, $align-items: center, $gap: 1rem) {
+	display: $display;
+	flex-direction: $flex-dir;
+	justify-content: $jc;
+	align-items: $align-items;
+	gap: $gap;
+}

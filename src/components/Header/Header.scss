@@ -1,0 +1,67 @@
+@use "./../../styles/variable" as *;
+@use "./../../styles/mixins" as *;
+
+header {
+    @include rfcc($flex-dir:column, $gap:0);
+    
+    padding: 1rem;
+    border-bottom: 2px solid $color-secondary;
+    padding-bottom: 1.5rem;
+}
+
+    h1 {
+        color: $color-accent;
+    }
+    
+    form {
+        @include rfcc;
+    }
+    
+        textarea {
+            background-color: lighten($color-primary, 15%);
+            color: $color-secondary;
+            border-radius: 1rem;
+            border: 2px dashed $color-secondary;
+            padding: 1rem;
+            height: 2rem;
+            width: 15rem;
+            outline: none;
+            caret-color: $color-accent;
+            
+            &:hover, &:active {
+                background-color: darken($color-accent, 5%);
+            }
+        }
+        
+        button {
+            // border-radius: 1rem;
+            height: 2rem;
+            padding: 1rem;
+            /* outline: none; */
+            border: 2px solid $color-secondary;
+            cursor: pointer;
+            color: $color-secondary;
+            font-weight: bold;
+        }
+    
+            #saveNote {
+                background-color: $color-primary;
+                color: $color-accent;
+                border: 2px solid $color-accent;
+                
+                &:hover {
+                    background-color: $color-accent;
+                    color: $color-primary;
+                }
+            }
+    
+            #clearNote {
+                background-color: $color-primary;
+                color: red;
+                border: 2px solid red;
+                
+                &:hover {
+                    background-color: red;
+                    color: $color-secondary;
+                }
+            }
