@@ -1,4 +1,6 @@
-@mixin rfcc($display: flex, $flex-dir: row, $jc: center, $align-items: center, $gap: 1rem) {
+@use "variable" as *;
+
+@mixin rfcc($display: flex, $flex-dir: row, $jc: center, $align-items: center, $gap: $border-radius-default) {
 	display: $display;
 	flex-direction: $flex-dir;
 	justify-content: $jc;

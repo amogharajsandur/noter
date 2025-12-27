@@ -1,0 +1,103 @@
+@use "./../../styles/variable" as *;
+@use "./../../styles/mixins" as *;
+
+form {
+    @include rfcc;
+    padding: 1rem;
+}
+    
+        textarea {
+            background-color: lighten($color-primary, 10%);
+            color: $color-secondary;
+            border-radius: $border-radius-default;
+            border: 2px dashed $color-secondary;
+            padding: $padding-default;
+            outline: none;
+            caret-color: $color-accent;
+
+            &::placeholder {
+                color: $color-secondary;
+                opacity: 0.5;
+            }
+        }
+        
+        #buttons {
+            @include rfcc;
+        }
+
+        button {
+            border-radius: $border-radius-default;
+            height: 0.6rem;
+            padding: $padding-default;
+            // outline: none;
+            border: 2px solid $color-secondary;
+            cursor: pointer;
+            color: $color-secondary;
+            font-weight: bold;
+        }
+    
+            #save-note {
+                background-color: $color-primary;
+                color: $color-accent;
+                border: 2px solid $color-accent;
+                
+                &:hover {
+                    background-color: $color-accent;
+                    color: $color-primary;
+                }
+            }
+    
+            #clear-note {
+                background-color: $color-primary;
+                color: $color-danger;
+                border: 2px solid $color-danger;
+                
+                &:hover {
+                    background-color: $color-danger;
+                    color: $color-secondary;
+                }
+            }
+
+#notes-list {
+    list-style: none;
+    
+    li {
+        padding: $padding-default;
+        margin: $margin-default;
+        border-radius: $border-radius-default;
+        border: 1px $color-secondary;
+        background-color: lighten($color-primary, 10%);
+        
+        &:hover {
+            box-shadow: 1px 1px 2px $color-accent;
+        }
+
+        article {
+            padding: $padding-default/2;
+            position: relative;
+
+            P {
+                padding: $padding-default 0;
+                // margin-top: $margin-default/2;
+                // margin-bottom: $margin-default/2;
+            }
+            
+            small {
+                color: darken($color-secondary, 50%);
+                
+                &:first-child {
+                    color: $color-accent;
+                    position: absolute;
+                    bottom: 0;
+                    left: 1rem/2;
+                }
+
+                &:last-child {
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                }
+            }
+        }
+    }
+}
